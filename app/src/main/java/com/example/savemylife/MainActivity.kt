@@ -4,9 +4,7 @@ import android.content.Context
 import android.hardware.SensorManager
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.example.savemylife.component.DaggerAlertComponent
-import com.example.savemylife.module.AlertModule
-import com.example.savemylife.repository.service.AlertService
+import com.example.savemylife.di.component.DaggerAlertComponent
 import com.example.savemylife.sensor.Accelerometer
 import kotlinx.android.synthetic.main.activity_main.*
 

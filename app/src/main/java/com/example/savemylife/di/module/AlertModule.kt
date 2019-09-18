@@ -1,4 +1,4 @@
-package com.example.savemylife.module
+package com.example.savemylife.di.module
 
 import com.example.savemylife.repository.AlertRepository
 import com.example.savemylife.repository.service.AlertService
@@ -7,7 +7,7 @@ import dagger.Provides
 import retrofit2.Retrofit
 
 @Module
-class AlertModule() {
+class AlertModule {
 
     @Provides
     fun provideAlertService(): AlertService {
@@ -18,7 +18,7 @@ class AlertModule() {
     }
 
     @Provides
-    fun provideAlertRepository(): AlertRepository {
-        return AlertRepository(provideAlertService())
+    fun provideAlertRepository(alertService: AlertService): AlertRepository {
+        return AlertRepository(alertService)
     }
 }

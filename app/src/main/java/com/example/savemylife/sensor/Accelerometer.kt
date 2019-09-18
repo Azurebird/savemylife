@@ -6,7 +6,6 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.util.Log
-import com.example.savemylife.component.DaggerAlertComponent
 import com.example.savemylife.repository.AlertRepository
 import javax.inject.Inject
 import kotlin.math.pow
