@@ -15,11 +15,10 @@ import kotlin.math.sqrt
  * Handles accelerometer information
  */
 class Accelerometer(
-    private val sensorManager: SensorManager,
-    val sensorChanged: (totalAcceleration: Float) -> Unit
+    @Inject @JvmField var sensorManager: SensorManager,
+    @Inject @JvmField var alertRepository: AlertRepository
 ): SensorEventListener {
 
-    @Inject lateinit var alertRepository: AlertRepository
 
     private var alreadyCalled: Boolean = false
 
@@ -59,7 +58,6 @@ class Accelerometer(
             alertRepository.generateAlert()
             alreadyCalled = true
         }
-        sensorChanged(calculateAcceleration(event.values[0], event.values[1], event.values[2]))
     }
 
     /**

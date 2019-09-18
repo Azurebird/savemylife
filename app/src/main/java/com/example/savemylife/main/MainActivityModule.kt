@@ -1,13 +1,16 @@
-package com.example.savemylife.di.module
+package com.example.savemylife.main
 
+import android.content.Context
+import android.hardware.SensorManager
 import com.example.savemylife.repository.AlertRepository
 import com.example.savemylife.repository.service.AlertService
+import com.example.savemylife.sensor.Accelerometer
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 
 @Module
-class AlertModule {
+class MainActivityModule {
 
     @Provides
     fun provideAlertService(): AlertService {
@@ -20,5 +23,15 @@ class AlertModule {
     @Provides
     fun provideAlertRepository(alertService: AlertService): AlertRepository {
         return AlertRepository(alertService)
+    }
+
+    @Provides
+    fun provideSensorService(activity: MainActivity): SensorManager {
+        return activity.getSystemService(Context.SENSOR_SERVICE) as SensorManager
+    }
+
+    @Provides
+    fun provideAccelerometer(sensorManager: SensorManager, alertRepository: AlertRepository): Accelerometer {
+        return Accelerometer(sensorManager, alertRepository)
     }
 }
