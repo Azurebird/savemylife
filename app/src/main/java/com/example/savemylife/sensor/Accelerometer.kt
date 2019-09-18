@@ -6,6 +6,7 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.util.Log
+import com.example.savemylife.component.DaggerAlertComponent
 import com.example.savemylife.repository.AlertRepository
 import javax.inject.Inject
 import kotlin.math.pow
@@ -18,6 +19,10 @@ class Accelerometer(
     private val sensorManager: SensorManager,
     val sensorChanged: (totalAcceleration: Float) -> Unit
 ): SensorEventListener {
+
+    @Inject lateinit var alertRepository: AlertRepository
+
+    private var alreadyCalled: Boolean = false
 
     /** Accelerometer sensor */
     val sensor: Sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION)
@@ -48,6 +53,12 @@ class Accelerometer(
         if(event?.sensor?.type != Sensor.TYPE_LINEAR_ACCELERATION) {
             Log.i("EVENT:", event?.sensor?.type.toString())
             return
+        }
+
+        val totalAcceleration = calculateAcceleration(event.values[0], event.values[1], event.values[2])
+        if(totalAcceleration > 10 && !alreadyCalled) {
+            alertRepository.generateAlert()
+            alreadyCalled = true
         }
         sensorChanged(calculateAcceleration(event.values[0], event.values[1], event.values[2]))
     }

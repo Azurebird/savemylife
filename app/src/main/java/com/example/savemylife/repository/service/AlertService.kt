@@ -1,14 +1,16 @@
 package com.example.savemylife.repository.service
 
+import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface AlertService {
 
-    @GET("/bot-sensoresCAWR.php?ubicacionX={xCoord}&ubicacionY={yCoord}&celular={phone}&codigo={code}")
+    @GET("bot-sensoresCAWR.php")
     fun alert(
-        @Path("xCoord") xCoord: String,
-        @Path("yCoord") yCoord: String,
-        @Path("phone") phone: String,
-        @Path("code") code: String)
+        @Query("coordx") xCoord: String,
+        @Query("coordy") yCoord: String,
+        @Query("celular") phone: String,
+        @Query("codigo") code: String): Call<Void>
 }
