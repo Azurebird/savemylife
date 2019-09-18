@@ -1,4 +1,4 @@
-package com.example.savemylife
+package com.savemylife
 
 import org.junit.Test
 

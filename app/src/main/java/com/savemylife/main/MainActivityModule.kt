@@ -1,10 +1,10 @@
-package com.example.savemylife.main
+package com.savemylife.main
 
 import android.content.Context
 import android.hardware.SensorManager
-import com.example.savemylife.repository.AlertRepository
-import com.example.savemylife.repository.service.AlertService
-import com.example.savemylife.sensor.Accelerometer
+import com.savemylife.repository.AlertRepository
+import com.savemylife.repository.service.AlertService
+import com.savemylife.sensor.Accelerometer
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

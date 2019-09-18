@@ -1,7 +1,7 @@
-package com.example.savemylife.repository
+package com.savemylife.repository
 
 import android.util.Log
-import com.example.savemylife.repository.service.AlertService
+import com.savemylife.repository.service.AlertService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

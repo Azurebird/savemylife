@@ -1,8 +1,8 @@
-package com.example.savemylife.main
+package com.savemylife.main
 
 import android.os.Bundle
-import com.example.savemylife.R
-import com.example.savemylife.sensor.Accelerometer
+import com.savemylife.R
+import com.savemylife.sensor.Accelerometer
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 

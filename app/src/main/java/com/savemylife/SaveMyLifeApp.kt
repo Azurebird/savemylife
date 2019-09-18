@@ -1,6 +1,6 @@
-package com.example.savemylife
+package com.savemylife
 
-import com.example.savemylife.di.DaggerAlertComponent
+import com.savemylife.di.DaggerAlertComponent
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 

@@ -1,7 +1,7 @@
-package com.example.savemylife.di
+package com.savemylife.di
 
-import com.example.savemylife.main.MainActivity
-import com.example.savemylife.main.MainActivityModule
+import com.savemylife.main.MainActivity
+import com.savemylife.main.MainActivityModule
 import dagger.Module
 import dagger.android.AndroidInjector
 import dagger.android.ContributesAndroidInjector

@@ -1,4 +1,4 @@
-package com.example.savemylife.sensor
+package com.savemylife.sensor
 
 
 import android.hardware.Sensor
@@ -6,7 +6,7 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.util.Log
-import com.example.savemylife.repository.AlertRepository
+import com.savemylife.repository.AlertRepository
 import javax.inject.Inject
 import kotlin.math.pow
 import kotlin.math.sqrt
