@@ -2,4 +2,5 @@
     <string name="app_name">savemylife</string>
     <string name="acceleration_total">Total Acceleration:</string>
     <string name="zero_number">0</string>
+    <string name="phone_number">Phone Number</string>
 </resources>

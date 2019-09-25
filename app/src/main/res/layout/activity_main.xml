@@ -7,21 +7,15 @@
         android:layout_height="match_parent"
         tools:context=".main.MainActivity">
 
-    <TextView
-            android:layout_width="wrap_content"
+    <EditText
+            android:id="@+id/txt_phone_number"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@string/zero_number"
-            app:layout_constraintRight_toRightOf="parent"
-            android:id="@+id/acc_total"
-            android:layout_margin="@dimen/margin_border"
-            app:layout_constraintStart_toEndOf="@+id/txt_info_acc"
-            app:layout_constraintTop_toTopOf="parent"/>
-    <TextView
-            android:text="@string/acceleration_total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/txt_info_acc"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="@dimen/margin_border"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
