@@ -11,11 +11,34 @@
             android:id="@+id/txt_phone_number"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:ems="10"
             android:hint="@string/phone_number"
             android:inputType="phone"
+            app:layout_constraintBottom_toTopOf="@+id/txt_user_code"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:importantForAutofill="no" />
+
+    <EditText
+            android:id="@+id/txt_user_code"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/code"
+            android:inputType="number"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:importantForAutofill="no" />
+
+    <Button
+            android:id="@+id/btn_save"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_user_code" />
 
 </android.support.constraint.ConstraintLayout>
