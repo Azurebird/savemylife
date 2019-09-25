@@ -4,7 +4,6 @@ import android.os.Bundle
 import com.savemylife.R
 import com.savemylife.sensor.Accelerometer
 import dagger.android.support.DaggerAppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity() {
