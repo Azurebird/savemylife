@@ -5,4 +5,8 @@
     <string name="phone_number">Phone Number</string>
     <string name="code">Code</string>
     <string name="save">Save</string>
+
+    <string name="property_phone_number">phone_number</string>
+    <string name="property_code">code</string>
+    <string name="settings_file">settings_file</string>
 </resources>
