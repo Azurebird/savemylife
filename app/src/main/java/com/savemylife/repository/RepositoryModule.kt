@@ -18,8 +18,8 @@ class RepositoryModule {
     }
 
     @Provides
-    fun provideAlertRepository(alertService: AlertService): AlertRepository {
-        return AlertRepository(alertService)
+    fun provideAlertRepository(alertService: AlertService, settingsRepository: SettingsRepository): AlertRepository {
+        return AlertRepository(alertService, settingsRepository)
     }
 
     @Provides

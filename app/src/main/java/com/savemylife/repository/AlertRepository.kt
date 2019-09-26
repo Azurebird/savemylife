@@ -8,23 +8,26 @@ import retrofit2.Response
 import javax.inject.Inject
 
 
-class AlertRepository(
-    @Inject @JvmField var alertService: AlertService
+class AlertRepository @Inject constructor(
+    var alertService: AlertService,
+    var settingsRepository: SettingsRepository
 ) {
 
     fun generateAlert() {
         val xCoord = "6.2169826"
         val yCoord = "-75.5659104"
-        val phone = "573164007939"
-        val code = "784523"
-        alertService.alert(xCoord, yCoord, phone, code).enqueue(object: Callback<Void> {
-            override fun onFailure(call: Call<Void>, t: Throwable) {
-                Log.e("Tag", "Error", t)
-            }
+        val phone = settingsRepository.getSetting(SettingsRepository.PHONE_NUMBER)
+        val code = settingsRepository.getSetting(SettingsRepository.CODE)
+        Log.i("Tag", "Sending to ${phone} with code ${code}")
+        alertService.alert(xCoord, yCoord, phone, code).enqueue(EmptyCallBack())
+    }
+}
 
-            override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                Log.e("Tag", "Worked!")
-            }
-        })
+class EmptyCallBack: Callback<Void> {
+    override fun onFailure(call: Call<Void>, t: Throwable) {
+        Log.e("Tag", "Error", t)
+    }
+    override fun onResponse(call: Call<Void>, response: Response<Void>) {
+        Log.e("Tag", "Worked!")
     }
 }
